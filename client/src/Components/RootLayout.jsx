@@ -1,12 +1,13 @@
 import {Outlet} from 'react-router-dom';
 import TopBar from './TopBar';
-
+import NavigationBar from './NavigationBar';
 
 const RootLayout = () => {
   return (
     <div>
-        {<TopBar/>}
-        <Outlet/>
+      {<TopBar/>}
+      {<NavigationBar/>}
+      <Outlet/>
     </div>
   )
 }

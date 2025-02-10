@@ -1,3 +1,84 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Navigation Bar */
+
+.mainnavigationlink ul li:hover{
+    color:#FF5421;
+}
+
+.mainnavigationlink ul li a:after {
+    content: '';
+    display: block;
+    margin: auto;
+    height: 2px;
+    width: 0px;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+}
+  
+  
+  .mainnavigationlink ul li a:hover:after {
+    width: 100%;
+    background: #FABC11;
+  }
+  
+  .mainnavigationlink ul li a:before {
+    content: '';
+    display: block;
+    margin: auto;
+    height: 2px;
+    width: 0px;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+  }
+  
+  .mainnavigationlink ul li a:hover:before {
+    width: 100%;
+    background: #FABC11;
+  }
+
+  .mainnavigationlink ul li a.active{
+      border-top: 2px solid #FABC11 ;
+      border-bottom: 2px solid #FABC11;
+  }   
+
+  .mainnavigationlink ul li a.active::before{
+    display:none;
+  }
+
+  .mainnavigationlink ul li a.active::after{
+    display:none;
+  }
+
+
+
+
+
+  /* side navbar */
+  @keyframes sidenavigationlink {
+    from { width: 0; }
+    to { width: 320px; }
+  }
+  
+  .sidenavigationlink {
+    animation: sidenavigationlink 1s ease-in-out;
+  }
+
+  .toggle ul li{
+    border-bottom:1px solid rgba(0, 0, 0, .06) ;
+    padding-bottom: 15px;
+    font-size: 13px;
+    font-weight:400;
+  }
+
+  .toggle ul li a.active {
+    color :#FABC11;
+  }
+  
+
+
+
+
+  
