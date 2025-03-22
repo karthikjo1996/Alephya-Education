@@ -2,7 +2,8 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import userRoutes from './Routes/userRoutes.js'
-import { errorHandler, notFound } from './middleware/errormiddleware.js';
+import cookieParser from "cookie-parser"
+import {notFound,errorHandler} from "./middleware/errormiddleware.js"
 
 
 dotenv.config();
@@ -15,12 +16,17 @@ mongoose.connect(process.env.MONGO)
     console.log(err);
 });
 
-//server running
+//server runnings
 const PORT = 5000;
 const app = express();
 
+
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+
 //routes
-app.use("/alephya/users",userRoutes);
+app.use("/alephya/user",userRoutes);
+
 
 //middleware
 app.use(notFound);
